@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"lambda","Source":"./lambda_function","Dir":"lambda_function"},{"Key":"s3_back_up","Source":"./s3_backup","Dir":"s3_backup"}]}
