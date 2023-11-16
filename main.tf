@@ -7,3 +7,12 @@ terraform {
             }
     }
 }
+
+module "s3_source_bucket" {
+    source = ".source_module"
+}
+
+module "s3_backup_bucket" {
+    source = ".backup_module"
+}
+
