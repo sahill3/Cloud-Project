@@ -11,6 +11,7 @@ terraform {
 # Provider Block
 provider "aws"{
     region = var.aws_region
+
     profile = "default"
 }
 
@@ -20,6 +21,7 @@ resource "aws_s3_bucket" "backup_bucket" {
 
 resource "aws_s3_bucket_acl" "backup_bucket_acl" {
     bucket = aws_s3_bucket.backup_bucket.id
+
     acl    = "public-read"
 }
 
@@ -36,4 +38,7 @@ resource "aws_s3_bucket_policy" "hosting_bucket_policy" {
             }
         ]
     })
+}
+
+    acl    = "private"
 }
