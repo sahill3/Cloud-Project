@@ -11,6 +11,7 @@ terraform {
 # Provider Block
 provider "aws"{
     region = var.aws_region
+
     profile = "default"
 }
 
@@ -36,4 +37,7 @@ resource "aws_s3_bucket_policy" "hosting_bucket_policy" {
             }
         ]
     })
+}
+
+    acl    = "private"
 }
