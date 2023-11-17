@@ -18,10 +18,10 @@ resource "aws_s3_bucket" "backup_bucket" {
     bucket = var.backup_bucket
 }
 
-resource "aws_s3_bucket_acl" "backup_bucket_acl" {
-    bucket = aws_s3_bucket.backup_bucket.id
-    acl    = "public-read"
-}
+# resource "aws_s3_bucket_acl" "backup_bucket_acl" {
+#     bucket = aws_s3_bucket.backup_bucket.id
+#     acl    = "public-read"
+# }
 
 resource "aws_s3_bucket_policy" "hosting_bucket_policy" {
     bucket = aws_s3_bucket.backup_bucket.id
