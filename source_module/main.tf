@@ -23,6 +23,15 @@ resource "aws_s3_bucket" "source_bucket" {
 #     acl    = "public-read"
 # }
 
+resource "aws_s3_bucket_public_access_block" "source_bucket_acl" {
+  bucket = aws_s3_bucket.source_bucket.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
 resource "aws_s3_bucket_policy" "hosting_bucket_policy" {
     bucket = aws_s3_bucket.source_bucket.id
     policy = jsonencode({
